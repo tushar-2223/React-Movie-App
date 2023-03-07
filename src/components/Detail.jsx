@@ -6,7 +6,8 @@ import noimage from '../assets/images/movies.jpg'
 import { FaPlay } from "react-icons/fa";
 
 export const Detail = () => {
-
+  const APIKEY = import.meta.env.VITE_API_KEY;
+ 
   const { loader, setLoader } = useContext(Contextpage);
 
   const { id } = useParams()
@@ -18,7 +19,7 @@ export const Detail = () => {
 
   const fetchMovie = async () => {
     const data = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKEY}&language=en-US`
     );
     const moviedetail = await data.json();
     setMoviedet(moviedetail);
@@ -28,7 +29,7 @@ export const Detail = () => {
 
   const fetchCast = async () => {
     const castdata = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language`
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${APIKEY}&language`
     );
     const castdetail = await castdata.json();
     setCastdata(castdetail.cast);
@@ -37,7 +38,7 @@ export const Detail = () => {
 
   const fetchVideo = async () => {
     const data = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${APIKEY}&language=en-US`
     );
     const videodata = await data.json();
     setVideo(videodata.results);
