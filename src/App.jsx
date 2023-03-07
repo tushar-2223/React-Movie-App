@@ -12,7 +12,7 @@ function App() {
   return (
     <MovieProvider>
       <Navbar />
-      <div className="ml-[15rem]">
+      <div className="md:ml-[15rem]">
       <Routes>
           <Route path='/' element={<Container />} />
           <Route path='/trending' element={<Trending />} />

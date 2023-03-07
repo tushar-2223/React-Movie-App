@@ -58,19 +58,19 @@ export const Detail = () => {
         loader ? <div className='h-screen w-full flex justify-center items-center'><span className="loader m-10"></span></div> :
           <>
 
-            <Link to="/" className='fixed z-10 text-4xl text-black bg-white m-5 rounded-full'><HiChevronLeft /></Link>
+            <Link to="/" className='fixed z-10 text-4xl text-black bg-white m-3 md:m-5 rounded-full'><HiChevronLeft /></Link>
 
             {/* poster */}
             <div className='relative h-auto md:h-[82vh] flex justify-center'>
               <div className='h-full w-full shadowbackdrop absolute'></div>
-              <h1 className='text-white absolute bottom-0 p-10 text-3xl md:text-6xl font-bold text-center'>{moviedet.original_title}</h1>
+              <h1 className='text-white absolute bottom-0 p-10 text-2xl md:text-6xl font-bold text-center'>{moviedet.original_title}</h1>
               {moviedet.backdrop_path === null ? <img src={noimage} className='h-full w-full' /> : <img src={"https://image.tmdb.org/t/p/original/" + moviedet.backdrop_path} className='h-full w-full' />}
             </div>
 
             {/* overview */}
-            <h2 className='text-white text-center pt-5 px-5 md:px-60 font-Roboto text-[18px]'>{moviedet.overview}</h2>
+            <h2 className='text-white text-center pt-5 px-3 md:px-60 font-Roboto text-[18px]'>{moviedet.overview}</h2>
 
-            <div className='text-blue-100 font-semibold py-3 flex justify-center'>
+            <div className='text-blue-100 font-semibold my-3 flex justify-center'>
               <h2 className='bg-blue-600/30 border-2 border-blue-700 py-2 px-3 rounded-full'>Release Date : {moviedet.release_date}</h2>
             </div>
 
@@ -87,8 +87,8 @@ export const Detail = () => {
             <div className='flex flex-col items-center'>
               <h1 className="text-3xl text-blue-300 font-semibold text-center p-2">Cast</h1>
 
-              <div className="px-5 flex flex-row my-5 max-w-full flex-start overflow-x-auto relative
-              scrollbar-thin scrollbar-thumb-gray-500/20 scrollbar-track-gray-900/90 pb-3">
+              <div className="md:px-5 flex flex-row my-5 max-w-full flex-start overflow-x-auto relative
+              scrollbar-none md:scrollbar-thin scrollbar-thumb-gray-500/20 scrollbar-track-gray-900/90 md:pb-3">
                 {castdata.map((cast) => (
                   <>
                     {cast.profile_path !== null ? <>

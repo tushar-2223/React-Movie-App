@@ -12,7 +12,7 @@ function Moviecard({ movie }) {
         animate={{ opacity: 1 }}
         exit={{opacity:1}}
         layout
-        className="card relative w-60 h-[360px] my-5 cursor-pointer rounded-xl overflow-hidden">
+        className="card relative w-60 h-[360px] my-3 mx-2 md:my-5 md:mx-0 cursor-pointer rounded-xl overflow-hidden">
             <div className='absolute bottom-0 w-full flex justify-between items-end p-3 z-10'>
                 <h1 className='text-white text-xl font-semibold  break-normal break-words'>{movie.title || movie.name}</h1>
 

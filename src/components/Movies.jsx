@@ -16,12 +16,12 @@ function Movies() {
 
     return (
 
-        <div className='w-full bg-[#10141e] p-10'>
+        <div className='w-full bg-[#10141e] md:p-10 mb-20 md:mb-0'>
             <Genre />
             <Header />
             <motion.div
                 layout
-                className="w-full p-2 flex flex-wrap relative justify-around">
+                className="w-full md:p-2 flex flex-wrap relative justify-evenly md:justify-around">
                 <AnimatePresence>
                     {
                         loader ?  <span className="loader m-10"></span>:
